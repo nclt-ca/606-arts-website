@@ -9,10 +9,6 @@ menus:
 
 606 Art Space brings arts, culture, education, and community together at 606 Victoria Street in downtown Nelson.
 
-## The building
-
-The space is in the former Kootenay School of the Arts building.
-
 ## A community-led strategy
 
 The [Future of Kootenay Studio Arts — Operational Feasibility Study (PDF)](/documents/606-feasibility-study-2026.pdf), prepared by Nordicity and MBAC in February 2026, draws on consultation with artists, cultural workers, community organisations, and other local partners. It explores how the building can operate as a shared arts space, with an approach to governance, programming, and financial sustainability.

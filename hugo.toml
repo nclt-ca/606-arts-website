@@ -11,8 +11,3 @@ noindex = true
 [params.steward]
 name = 'Nelson Community Land Trust'
 url = 'https://nclt.ca/'
-
-[[menus.main]]
-name = 'NCLT'
-url = 'https://nclt.ca/'
-weight = 40

@@ -14,6 +14,10 @@ Nelson, BC
 
 606 Art Space is in the former Kootenay School of the Arts building.
 
+## Use the space
+
+Interested in using the space? Email [hello@nclt.ca](mailto:hello@nclt.ca).
+
 ## Activities and programmes
 
 Visit the [organisations’ websites](/organisations/) for information about their activities and programmes.

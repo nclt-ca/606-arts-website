@@ -11,10 +11,21 @@ class Page(HTMLParser):
         super().__init__()
         self.tags = []
         self.text = []
+        self.main_nav_links = []
+        self.in_main_nav = False
         self.feed(path.read_text())
 
     def handle_starttag(self, tag, attrs):
-        self.tags.append((tag, dict(attrs)))
+        attrs = dict(attrs)
+        self.tags.append((tag, attrs))
+        if tag == "nav" and attrs.get("aria-label") == "Main navigation":
+            self.in_main_nav = True
+        if tag == "a" and self.in_main_nav:
+            self.main_nav_links.append(attrs.get("href"))
+
+    def handle_endtag(self, tag):
+        if tag == "nav":
+            self.in_main_nav = False
 
     def handle_data(self, data):
         self.text.append(data)
@@ -36,6 +47,7 @@ for path in paths:
     assert page.elements("footer"), f"{path}: missing footer"
     assert any(a.get("href") == "#main" for a in page.elements("a")), path
     assert any(n.get("aria-label") == "Main navigation" for n in page.elements("nav")), path
+    assert "https://nclt.ca/" not in page.main_nav_links, f"{path}: NCLT is still in the main nav"
     assert any(m.get("name") == "robots" and m.get("content") == "noindex, nofollow"
                for m in page.elements("meta")), f"{path}: missing publication guard"
     assert not any(page.elements(t) for t in ["script", "form", "img"]), path
@@ -74,5 +86,9 @@ for path in paths:
 organisations = Page(root / "organisations/index.html")
 for url in ["https://ksarts.ca/", "https://www.nearsidearts.org/"]:
     assert any(a.get("href") == url for a in organisations.elements("a")), url
-assert "606 Victoria Street" in " ".join(Page(root / "visit/index.html").text)
+visit = Page(root / "visit/index.html")
+assert "606 Victoria Street" in " ".join(visit.text)
+assert any(a.get("href") == "mailto:hello@nclt.ca" for a in visit.elements("a")), "Missing space enquiry email"
+about = Page(root / "about/index.html")
+assert "The building" not in [t.strip() for t in about.text], "Redundant building section remains"
 print(f"Passed: {len(paths)} pages; structure, navigation, links, local assets, and publication guard.")
