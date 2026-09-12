@@ -1,0 +1,9 @@
+<div class="site-container footer-content">
+  <div>
+    <p class="footer-title">{{ site.Title }}</p>
+    {{ with site.Home.Params.hero.location }}<p>{{ . }}</p>{{ end }}
+  </div>
+  {{ with site.Params.steward }}
+    <p><a href="{{ .url }}">{{ .name }}</a></p>
+  {{ end }}
+</div>

@@ -1,0 +1,18 @@
+baseURL = 'https://606arts.ca/'
+languageCode = 'en-ca'
+title = '606 Art Space'
+disableKinds = ['taxonomy', 'term', 'RSS']
+
+[params]
+description = 'A shared arts, culture, education, and community space in downtown Nelson.'
+# Keep this local noindex guard until publication is explicitly approved.
+noindex = true
+
+[params.steward]
+name = 'Nelson Community Land Trust'
+url = 'https://nclt.ca/'
+
+[[menus.main]]
+name = 'NCLT'
+url = 'https://nclt.ca/'
+weight = 40

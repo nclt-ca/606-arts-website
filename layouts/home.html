@@ -1,0 +1,36 @@
+{{ define "main" }}
+  <section class="hero-section" aria-labelledby="page-title">
+    <div class="hero-container">
+      <div class="hero-content">
+        {{ with .Params.hero.location }}<p class="hero-location">{{ . }}</p>{{ end }}
+        <h1 class="hero-title" id="page-title">{{ .Params.hero.title | default .Title }}</h1>
+        {{ with .Params.hero.subtitle }}<p class="hero-description">{{ . }}</p>{{ end }}
+      </div>
+    </div>
+  </section>
+
+  <div class="site-container">
+    {{ if .Content }}
+      <section class="home-intro prose" aria-labelledby="intro-title">
+        <h2 id="intro-title">{{ .Params.intro_title | default .Title }}</h2>
+        {{ .Content }}
+      </section>
+    {{ end }}
+
+    {{ with .Params.featured_pages }}
+      <section class="explore-section" aria-labelledby="explore-title">
+        <h2 id="explore-title">{{ $.Params.featured_title | default "Explore" }}</h2>
+        <div class="page-grid">
+          {{ range . }}
+            {{ with site.GetPage . }}
+              <article class="page-card">
+                <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+                {{ with .Description }}<p>{{ . }}</p>{{ end }}
+              </article>
+            {{ end }}
+          {{ end }}
+        </div>
+      </section>
+    {{ end }}
+  </div>
+{{ end }}

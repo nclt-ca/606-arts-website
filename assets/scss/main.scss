@@ -1,0 +1,312 @@
+/* NCLT's warm off-white palette, generous hero, and minimal top navigation.
+   Bootstrap CSS is served locally before these overrides. */
+:root {
+  --ink: #000000;
+  --fog: #fafaf8;
+  --paper: #ffffff;
+  --mid-gray: #d8d8d4;
+  --muted: #555555;
+  --accent: #e3e8da;
+  --focus: #667151;
+
+  color-scheme: light;
+  --bs-body-bg: var(--fog);
+  --bs-body-color: var(--ink);
+  --bs-border-color: var(--mid-gray);
+  --bs-link-color: var(--ink);
+  --bs-link-hover-color: var(--muted);
+  --bs-primary: var(--ink);
+}
+
+html {
+  background: var(--fog);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  background: var(--fog);
+  color: var(--ink);
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.7;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+main {
+  flex: 1;
+}
+
+main:focus {
+  outline: none;
+}
+
+.site-container {
+  width: calc(100% - 3rem);
+  max-width: 960px;
+  margin-inline: auto;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+}
+
+h2 {
+  font-size: clamp(1.75rem, 4vw, 2.625rem);
+}
+
+h3 {
+  font-size: 1.375rem;
+}
+
+p,
+ul {
+  margin: 0 0 1.5rem;
+}
+
+ul {
+  padding-left: 1.25rem;
+}
+
+li + li {
+  margin-top: 0.35rem;
+}
+
+a {
+  color: var(--ink);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+a:hover {
+  color: var(--muted);
+  text-decoration-thickness: 2px;
+}
+
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 4px;
+}
+
+.site-header {
+  border-bottom: 1px solid var(--mid-gray);
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem 2rem;
+  padding-block: 1.25rem;
+}
+
+.site-brand {
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.site-menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 1rem;
+}
+
+.site-menu li {
+  margin: 0;
+}
+
+.site-menu a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding-block: 0.5rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.site-menu a:hover,
+.site-menu a[aria-current="page"] {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.4em;
+}
+
+.hero-section {
+  border-bottom: 1px solid var(--mid-gray);
+}
+
+.hero-container {
+  display: flex;
+  justify-content: center;
+  padding: clamp(4rem, 10vw, 8rem) 1.5rem;
+}
+
+.hero-content {
+  max-width: 1000px;
+  text-align: center;
+}
+
+.hero-location {
+  margin-bottom: 1.5rem;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.hero-title {
+  max-width: 18ch;
+  margin: 0 auto 1.5rem;
+  font-size: clamp(2.75rem, 7vw, 5rem);
+  line-height: 1.1;
+}
+
+.hero-description {
+  max-width: 42ch;
+  margin: 0 auto;
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  line-height: 1.5;
+}
+
+.home-intro {
+  padding-block: clamp(3rem, 7vw, 5rem);
+}
+
+.prose {
+  max-width: 65ch;
+  overflow-wrap: break-word;
+}
+
+.prose h2 {
+  margin: 3rem 0 1.5rem;
+}
+
+.prose > :first-child {
+  margin-top: 0;
+}
+
+.prose > :last-child {
+  margin-bottom: 0;
+}
+
+.prose img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.explore-section {
+  padding-bottom: clamp(3rem, 7vw, 5rem);
+}
+
+.explore-section > h2 {
+  margin-bottom: 2rem;
+}
+
+.page-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.page-card {
+  border: 1px solid var(--mid-gray);
+  border-top: 4px solid var(--accent);
+  padding: 1.5rem;
+  background: var(--paper);
+  overflow-wrap: break-word;
+}
+
+.page-card h3 {
+  margin: 0 0 1rem;
+}
+
+.page-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.content-page {
+  padding-block: clamp(3rem, 7vw, 5rem);
+}
+
+.page-header {
+  max-width: 65ch;
+  margin-bottom: 3rem;
+}
+
+.page-header h1 {
+  margin-bottom: 1.5rem;
+}
+
+.page-description {
+  color: var(--muted);
+  font-size: 1.375rem;
+}
+
+.site-footer {
+  border-top: 1px solid var(--mid-gray);
+  padding-block: 2.5rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+}
+
+.footer-content p {
+  margin: 0;
+}
+
+.footer-title {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+@media (max-width: 48rem) {
+  .page-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 40rem) {
+  body {
+    font-size: 1rem;
+  }
+
+  .site-container {
+    width: calc(100% - 2rem);
+  }
+
+  .site-nav {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .site-menu {
+    gap: 0.25rem 1.25rem;
+  }
+}

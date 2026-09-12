@@ -1,0 +1,32 @@
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+{{ $title := site.Title }}
+{{ if not .IsHome }}{{ $title = printf "%s | %s" .Title site.Title }}{{ end }}
+{{ $description := .Description | default site.Params.description }}
+<title>{{ $title }}</title>
+<meta name="description" content="{{ $description }}" />
+<link rel="canonical" href="{{ .Permalink }}" />
+{{ if site.Params.noindex }}<meta name="robots" content="noindex, nofollow" />{{ end }}
+<meta property="og:title" content="{{ $title }}" />
+<meta property="og:description" content="{{ $description }}" />
+<meta property="og:url" content="{{ .Permalink }}" />
+<meta property="og:site_name" content="{{ site.Title }}" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="en_CA" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="{{ $title }}" />
+<meta name="twitter:description" content="{{ $description }}" />
+
+<!-- Same Bootstrap version as the NCLT site, served locally rather than from a CDN. -->
+{{ with resources.Get "vendor/bootstrap-5.3.2.min.css" | fingerprint }}
+  <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" />
+{{ end }}
+
+
+<!-- NCLT branding overrides Bootstrap. -->
+{{ with resources.Get "scss/main.scss" }}
+  {{ $opts := dict "transpiler" "libsass" "outputStyle" "expanded" "targetPath" "css/main.css" }}
+  {{ with . | css.Sass $opts | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" />
+  {{ end }}
+{{ end }}

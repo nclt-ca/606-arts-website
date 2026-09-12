@@ -1,0 +1,15 @@
+{
+  "name": "606-arts-website",
+  "version": "1.0.0",
+  "private": true,
+  "devDependencies": {
+    "prettier": "^3.1.0",
+    "prettier-plugin-go-template": "^0.0.15"
+  },
+  "scripts": {
+    "dev": "hugo server --bind 127.0.0.1",
+    "build": "hugo --minify",
+    "format": "prettier --write '**/*.{html,css,scss,js,md,json}'",
+    "format:check": "prettier --check '**/*.{html,css,scss,js,md,json}'"
+  }
+}

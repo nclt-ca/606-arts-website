@@ -1,0 +1,18 @@
+public
+node_modules
+resources
+.hugo_build.lock
+.DS_Store
+.claude
+
+# Local working briefs contain private context; do not publish to GitHub.
+TODO.md
+FIRST-ITERATION.md
+docs/plans/
+
+# devenv
+.devenv/
+.direnv/
+devenv.local.nix
+.devenv.flake.nix
+devenv.lock
