@@ -15,6 +15,4 @@ featured_pages:
 
 606 Art Space is a shared space in downtown Nelson, in the former Kootenay School of the Arts building.
 
-[Nelson Community Land Trust](https://nclt.ca/) holds the building lease and manages the shared space. The tenant organisations run their own activities and programmes.
-
 <!-- Source: adapted from the existing public NCLT site content at /Users/matt/git/nclt-ca/website/content/606.md; claims have not been independently reverified. -->
