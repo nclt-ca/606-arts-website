@@ -21,4 +21,6 @@ The building is shared by independent organisations, each with its own identity,
 
 [Meet the organisations at 606](/organisations/).
 
+Interested in visiting or becoming a tenant? Our [Find us page](/visit/) has the address and contact details.
+
 <!-- Source: adapted from ../website/content/606.md; claims have not been independently reverified. -->

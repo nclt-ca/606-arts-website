@@ -17,4 +17,6 @@ menus:
 
 [Visit Nearside Arts](https://www.nearsidearts.org/) for information about its activities and programmes.
 
+Interested in visiting or becoming a tenant? Our [Find us page](/visit/) has the address and contact details.
+
 <!-- Source: these organisations are named in ../website/content/606.md. This is not a newly verified or exhaustive tenant list. Verify before publication. -->
